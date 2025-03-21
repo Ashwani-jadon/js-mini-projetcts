@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <input type="text" id="username" placeholder="Enter GitHub username...">
+            <button onclick="fetchGitHubProfile()">Search</button>
+            <button id="theme-toggle">🌙</button>
+        </header>
+
+        <main>
+            <section class="profile-card" id="profile-card">
+              <img id="avatar" class="default" alt="GitHub Profile Picture">
+                <h2 id="name"></h2>
+                <p id="bio"></p>
+                <a id="github-profile-link" href="#" target="_blank" class="visit-profile">Visit GitHub Profile</a>
+                <div class="stats">
+                    <span>Followers: <strong id="followers"></strong></span>
+                    <span>Following: <strong id="following"></strong></span>
+                    <span>Repositories: <strong id="repo-count"></strong></span>
+                </div>
+                <section class="tech-stack">
+                    <h3>Tech Stack Usage</h3>
+                    <canvas id="techStackChart"></canvas>
+                </section>
+                
+            </section>
+
+            <section class="activity">
+                <h3>Contribution Activity</h3>
+                <div id="contributions">Loading...</div>
+            </section>
+
+            <section class="repo-container">
+                <h3>Repositories</h3>
+                <div class="repos" id="repos-container"></div>
+                <button id="load-more" style="display:none;">Load More</button>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
